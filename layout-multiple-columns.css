@@ -1,4 +1,5 @@
 /* Mastodon Bird UI by @rolle@mementomori.social
+   Edit for OCCMv3 by Lastorder-DC
    2.0.0rc17 */
 
 /* CSS variables */
@@ -1584,7 +1585,7 @@ body.embed .detailed-status,
 
 .layout-multiple-columns .media-gallery > .media-gallery__item:nth-of-type(odd),
 .layout-multiple-columns .media-gallery > .media-gallery__item:nth-of-type(odd) > a,
-.layout-multiple-columns .media-gallery__preview:nth-of-type(odd),
+.layout-multiple-columns .media-gallery__preview:nth-of-type(odd)
  {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -1660,21 +1661,21 @@ body.embed .detailed-status__favorites {
 body.embed .detailed-status__link > .icon-reply + span::after,
 .layout-multiple-columns .detailed-status__link > .icon-reply + span::after {
   color: var(--color-dim);
-  content: 'Replies';
+  content: '답장';
   font-weight: var(--font-weight-semibold);
 }
 
 body.embed .detailed-status__link > .icon-retweet + span::after,
 .layout-multiple-columns .detailed-status__link > .icon-retweet + span::after {
   color: var(--color-dim);
-  content: 'Boosts';
+  content: '부스트';
   font-weight: var(--font-weight-semibold);
 }
 
 body.embed .detailed-status__link > .icon-star + span::after,
 .layout-multiple-columns .detailed-status__link > .icon-star + span::after {
   color: var(--color-dim);
-  content: 'Favourites';
+  content: '좋아요';
   font-weight: var(--font-weight-semibold);
 }
 
@@ -2381,7 +2382,7 @@ body.embed .detailed-status__meta .detailed-status__link .icon-retweet,
 /* stylelint-enable no-duplicate-selectors */
 
 /* ...except on those that have label with GitHub, github, YouTube or similar */
-.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="youtube" i], dt[title*="website" i], dt[title*="twitch" i], dt[title*="twitter" i], dt[title="x" i], dt[title*="discord" i], dt[title*="linkedin" i], dt[title*="instagram" i], dt[title="IG"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="paypal" i], dt[title*="patreon" i], dt[title*="threads" i], dt[title*="bluesky" i], dt[title*="nostr" i], dt[title*="facebook" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="fb" i], dt[title*="bandcamp" i]) {
+.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="유튜브" i], dt[title*="사이트" i], dt[title*="트위치" i], dt[title*="트위터" i], dt[title*="디스코드" i], dt[title*="linkedin" i], dt[title*="인스타그램" i], dt[title="인스타"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="paypal" i], dt[title*="patreon" i], dt[title*="스레드" i], dt[title*="블루스카이" i], dt[title*="nostr" i], dt[title*="페이스북" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="페북" i], dt[title*="밴드캠프" i]) {
   max-width: 50%;
 
   /* Move to last */
@@ -2390,13 +2391,13 @@ body.embed .detailed-status__meta .detailed-status__link .icon-retweet,
 }
 
 /* Hide labels that show "Website", "YouTube", etc. */
-.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="youtube" i], dt[title*="website" i], dt[title*="twitch" i], dt[title*="twitter" i], dt[title="x" i], dt[title*="discord" i], dt[title*="linkedin" i], dt[title*="instagram" i], dt[title="IG"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="paypal" i], dt[title*="patreon" i], dt[title*="threads" i], dt[title*="bluesky" i], dt[title*="nostr" i], dt[title*="bandcamp" i], dt[title*="facebook" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="fb" i]) dt {
+.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="유튜브" i], dt[title*="사이트" i], dt[title*="트위치" i], dt[title*="트위터" i], dt[title*="디스코드" i], dt[title*="linkedin" i], dt[title*="인스타그램" i], dt[title="인스타"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="페이팔" i], dt[title*="patreon" i], dt[title*="스레드" i], dt[title*="블루스카이" i], dt[title*="nostr" i], dt[title*="bandcamp" i], dt[title*="페이스북" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="페북" i]) dt {
   display: none;
 }
 
 /* Hide pipe after link icon and the link icon from the ones that already have an icon */
 .layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="website" i])::after,
-.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="youtube" i], dt[title*="twitch" i], dt[title*="twitter" i], dt[title="x" i], dt[title*="discord" i], dt[title*="linkedin" i], dt[title*="instagram" i], dt[title="IG"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="paypal" i], dt[title*="patreon" i], dt[title*="threads" i], dt[title*="bluesky" i], dt[title*="nostr" i], dt[title*="bandcamp" i], dt[title*="facebook" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="fb" i])::before {
+.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="유튜브" i], dt[title*="트위치" i], dt[title*="트위터" i], dt[title*="디스코드" i], dt[title*="linkedin" i], dt[title*="인스타그램" i], dt[title="인스타"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="페이팔" i], dt[title*="patreon" i], dt[title*="스레드" i], dt[title*="블루스카이" i], dt[title*="nostr" i], dt[title*="bandcamp" i], dt[title*="페이스북" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="페북" i])::before {
   display: none;
 }
 
@@ -2469,14 +2470,14 @@ body.embed .detailed-status__meta .detailed-status__link .icon-retweet,
   width: 18.5px;
 }
 
-.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="bandcamp" i])::after {
+.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="밴드캠프" i])::after {
   content: var(--icon-bandcamp);
   height: 18.5px;
   width: 18.5px;
 }
 
-.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="facebook" i])::after,
-.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="fb" i])::after {
+.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="페이스북" i])::after,
+.layout-multiple-columns .account__header__bio .account__header__fields dl:has(dt[title*="페북" i])::after {
   content: var(--icon-facebook);
   height: 18.5px;
   width: 18.5px;
@@ -2688,8 +2689,9 @@ body.embed .detailed-status__meta .detailed-status__link .icon-retweet,
 }
 
 .layout-multiple-columns .account__header__tabs .account-role {
-  display: none;
   width: 90px;
+  bottom: -8px;
+  position: relative;
 }
 
 /* Follow/unfollow button */
@@ -4997,9 +4999,9 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
 
 /* Advanced web interface specific styles */
 
-/* Make the side input last in order */
+/* Make the side input first in order */
 .layout-multiple-columns .drawer {
-  order: 999999;
+  order: 0;
   padding: 0 10px;
   width: var(--width-column);
 }
@@ -5033,4 +5035,9 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
 
 .layout-multiple-columns .column-settings__hashtags .column-select__multi-value {
   background-color: var(--color-bg-75);
+}
+
+/* Remove follow suggestions */
+.inline-follow-suggestions {
+  display: none;
 }

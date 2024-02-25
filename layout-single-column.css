@@ -1,4 +1,5 @@
 /* Mastodon Bird UI by @rolle@mementomori.social
+   Edit for OCCMv3 by Lastorder-DC
    2.0.0rc17 */
 
 /* CSS variables */
@@ -1612,8 +1613,8 @@ body.embed .detailed-status .video-player,
 
 .layout-single-column .media-gallery > .media-gallery__item:nth-of-type(odd),
 .layout-single-column .media-gallery > .media-gallery__item:nth-of-type(odd) > a,
-.layout-single-column .media-gallery__preview:nth-of-type(odd),
- {
+.layout-single-column .media-gallery__preview:nth-of-type(odd)
+{
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -1708,21 +1709,21 @@ body.embed > .activity-stream {
 body.embed .detailed-status__link > .fa-reply + span::after,
 .layout-single-column .detailed-status__link > .icon-reply + span::after {
   color: var(--color-dim);
-  content: 'Replies';
+  content: '답장';
   font-weight: var(--font-weight-semibold);
 }
 
 body.embed .detailed-status__link > .fa-retweet + span::after,
 .layout-single-column .detailed-status__link > .icon-retweet + span::after {
   color: var(--color-dim);
-  content: 'Boosts';
+  content: '부스트';
   font-weight: var(--font-weight-semibold);
 }
 
 body.embed .detailed-status__link > .fa-star + span::after,
 .layout-single-column .detailed-status__link > .icon-star + span::after {
   color: var(--color-dim);
-  content: 'Favourites';
+  content: '좋아요';
   font-weight: var(--font-weight-semibold);
 }
 
@@ -2458,18 +2459,18 @@ body.embed .detailed-status__meta .detailed-status__link .fa-retweet,
 }
 
 /* Hide labels that show "Website", "YouTube", etc. */
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="youtube" i], dt[title*="website" i], dt[title*="twitch" i], dt[title*="twitter" i], dt[title="x" i], dt[title*="discord" i], dt[title*="linkedin" i], dt[title*="instagram" i], dt[title="IG"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="paypal" i], dt[title*="patreon" i], dt[title*="threads" i], dt[title*="bluesky" i], dt[title*="nostr" i], dt[title*="bandcamp" i], dt[title*="facebook" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="fb" i]) dt {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="유튜브" i], dt[title*="사이트" i], dt[title*="트위치" i], dt[title*="트위터" i], dt[title*="디스코드" i], dt[title*="linkedin" i], dt[title*="인스타" i], dt[title="IG"], dt[title~="마스토돈 계정" i], dt[title~="마스토돈 계정" i], dt[title~="account" i], dt[title="부계정" i], dt[title*="마스토돈" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="페이팔" i], dt[title*="patreon" i], dt[title*="스레드" i], dt[title*="블루스카이" i], dt[title*="nostr" i], dt[title*="밴드캠프" i], dt[title*="페이스북" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="페북" i]) dt {
   display: none;
 }
 
 /* Hide pipe after link icon and the link icon from the ones that already have an icon */
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="website" i])::after,
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="youtube" i], dt[title*="twitch" i], dt[title*="twitter" i], dt[title="x" i], dt[title*="discord" i], dt[title*="linkedin" i], dt[title*="instagram" i], dt[title="IG"], dt[title~="Mastodon account" i], dt[title~="Mastodon account" i], dt[title~="account" i], dt[title="Alt account" i], dt[title*="mastodon" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="paypal" i], dt[title*="patreon" i], dt[title*="threads" i], dt[title*="bluesky" i], dt[title*="nostr" i], dt[title*="bandcamp" i], dt[title*="facebook" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="fb" i])::before {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="사이트" i])::after,
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="유튜브" i], dt[title*="트위치" i], dt[title*="트위터" i], dt[title*="디스코드" i], dt[title*="linkedin" i], dt[title*="인스타" i], dt[title="IG"], dt[title~="마스토돈 계정" i], dt[title~="마스토돈 계정" i], dt[title~="account" i], dt[title="부계정" i], dt[title*="마스토돈" i], dt[title*="masto" i], dt[title*="ko-fi" i], dt[title*="kofi" i], dt[title*="페이팔" i], dt[title*="patreon" i], dt[title*="스레드" i], dt[title*="블루스카이" i], dt[title*="nostr" i], dt[title*="밴드캠프" i], dt[title*="페이스북" i], dt[title*="friendica" i], dt[title*="pronouns" i], dt[title*="wordpress" i], dt[title*="페북" i])::before {
   display: none;
 }
 
 /* If GitHub etc. move even further from links */
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="youtube" i], dt[title*="twitch" i], dt[title*="twitter" i], dt[title="x" i], dt[title*="discord" i], dt[title*="linkedin" i], dt[title*="instagram" i], dt[title="IG"], dt[title="bandcamp"], dt[title="facebook"], dt[title="friendica"], dt[title="pronouns"], dt[title="wordpress"], dt[title="fb"]) {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="github" i], dt[title*="유튜브" i], dt[title*="트위치" i], dt[title*="트위터" i], dt[title*="디스코드" i], dt[title*="linkedin" i], dt[title*="인스타" i], dt[title="IG"], dt[title="밴드캠프"], dt[title="페이스북"], dt[title="friendica"], dt[title="pronouns"], dt[title="wordpress"], dt[title="페북"]) {
 
   /* Move to last-last */
   order: 99999;
@@ -2481,7 +2482,7 @@ body.embed .detailed-status__meta .detailed-status__link .fa-retweet,
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="discord" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="디스코드" i])::after {
   content: var(--icon-discord);
   height: 18.5px;
   width: 18.5px;
@@ -2499,20 +2500,19 @@ body.embed .detailed-status__meta .detailed-status__link .fa-retweet,
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="youtube" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="유튜브" i])::after {
   content: var(--icon-youtube);
   height: 18.5px;
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="twitch" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="트위치" i])::after {
   content: var(--icon-twitch);
   height: 18.5px;
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title="x" i])::after,
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="twitter" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="트위터" i])::after {
   content: var(--icon-twitter);
   height: 18.5px;
   width: 18.5px;
@@ -2524,7 +2524,7 @@ body.embed .detailed-status__meta .detailed-status__link .fa-retweet,
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="paypal" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="페이팔" i])::after {
   content: var(--icon-paypal);
   height: 18.5px;
   width: 18.5px;
@@ -2537,14 +2537,14 @@ body.embed .detailed-status__meta .detailed-status__link .fa-retweet,
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="bandcamp" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="밴드캠프" i])::after {
   content: var(--icon-bandcamp);
   height: 18.5px;
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="facebook" i])::after,
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="fb" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="페이스북" i])::after,
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="페북" i])::after {
   content: var(--icon-facebook);
   height: 18.5px;
   width: 18.5px;
@@ -2570,22 +2570,22 @@ body.embed .detailed-status__meta .detailed-status__link .fa-retweet,
 }
 
 .layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="masto" i])::after,
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="mastodon" i])::after,
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title="Alt account" i])::after,
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="마스토돈" i])::after,
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title="부계정" i])::after,
 .layout-single-column .account__header__bio .account__header__fields dl:has(dt[title~="account" i])::after,
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title~="Mastodon account" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title~="마스토돈 계정" i])::after {
   content: var(--icon-mastodon);
   height: 18.5px;
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="threads" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="스레드" i])::after {
   content: var(--icon-threads);
   height: 18.5px;
   width: 18.5px;
 }
 
-.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="bluesky" i])::after {
+.layout-single-column .account__header__bio .account__header__fields dl:has(dt[title*="블루스카이" i])::after {
   content: var(--icon-bluesky);
   height: 18.5px;
   width: 18.5px;
@@ -2750,8 +2750,9 @@ body.embed .detailed-status__meta .detailed-status__link .fa-retweet,
 }
 
 .layout-single-column .account__header__tabs .account-role {
-  display: none;
   width: 133.5px;
+  bottom: -8px;
+  position: relative;
 }
 
 /* Follow/unfollow button */
@@ -3257,58 +3258,56 @@ body.embed .button.logo-button:hover,
     order: 3;
   }
 
+/* Hide explore */
   .layout-single-column .column-link[href="/explore"] {
-    order: 4;
+    display: none;
   }
 
+/* Hide local */
   .layout-single-column .column-link[href="/public/local"] {
-    order: 5;
-  }
-
-  .layout-single-column .column-link[href="/public"] {
-    order: 6;
+    display: none;
   }
 
   .layout-single-column .column-link[href="/conversations"] {
-    order: 7;
+    order: 4;
   }
 
   .layout-single-column .column-link[href='/follow_requests'] {
-    order: 8;
-  }
-
-  .layout-single-column .column-link[href="/bookmarks"] {
-    order: 9;
-  }
-
-  .layout-single-column .column-link[href="/favourites"] {
-    order: 10;
+    order: 5;
   }
 
   .layout-single-column .column-link[href="/lists"] {
-    order: 12;
+    order: 6;
   }
 
   /* stylelint-disable-next-line no-duplicate-selectors */
   .layout-single-column .list-panel {
-    order: 13;
+    order: 7;
+  }
+
+  .layout-single-column .column-link[href="/bookmarks"] {
+    order: 8;
+  }
+
+  .layout-single-column .column-link[href="/favourites"] {
+    order: 9;
   }
 
   .layout-single-column .column-link[href="/settings/preferences"] {
-    order: 11;
+    order: 10;
   }
 
   .layout-single-column .navigation-panel__sign-in-banner,
   .layout-single-column .navigation-panel__legal {
-    order: 14;
+    order: 11;
   }
 
   .layout-single-column .flex-spacer {
-    order: 15;
+    order: 12;
   }
 
   .layout-single-column .getting-started__trends {
-    order: 16;
+    order: 13;
   }
 
   .layout-single-column .status__action-bar .icon-button {
@@ -3758,6 +3757,7 @@ body.embed .button.logo-button:hover,
     backdrop-filter: blur(12px);
     /* stylelint-disable-next-line */
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     background-color: var(--color-bg-75);
     content: '';
     /* Height is .ui__header + .tabs-bar__wrapper */
@@ -3927,19 +3927,39 @@ body.embed .button.logo-button:hover,
     order: 1;
   }
 
-  /* Explore */
-  .layout-single-column .column-link[href="/explore"] {
+  /* Notifications */
+  .layout-single-column .column-link[href="/notifications"] {
     order: 2;
   }
 
-  /* Notifications */
-  .layout-single-column .column-link[href="/notifications"] {
+  /* DM */
+  .layout-single-column .column-link[href="/conversations"] {
     order: 3;
+  }
+
+  /* Favourites */
+  .layout-single-column .column-link[href="/favourites"] {
+    order: 4;
   }
 
   /* Lists */
   .layout-single-column .column-link[href="/lists"] {
-    order: 4;
+    order: 5;
+  }
+
+  /* Bookmarks */
+  .layout-single-column .column-link[href="/bookmarks"] {
+    order: 6;
+  }
+
+  /* Hide explore */
+  .layout-single-column .column-link[href="/explore"] {
+    display: none;
+  }
+
+  /* Hide local */
+  .layout-single-column .column-link[href="/public/local"] {
+    display: none;
   }
 
   /* Fix "About" page's server thumbnail margins */
@@ -4425,6 +4445,10 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
   /* stylelint-disable-next-line */
   .layout-single-column.no-reduce-motion .status .icon-button.star-icon.activate .icon-star {
     left: -28px;
+  }
+  .layout-single-column .navigation-panel .navigation-panel__legal, .layout-single-column .navigation-panel .column-link {
+    flex: 0 0 calc(100vw / 6);
+    padding: 0;
   }
 }
 
@@ -5097,3 +5121,8 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
 }
 
 2/2: If you prefer stars remove this line too */
+
+/* Remove follow suggestions */
+.inline-follow-suggestions {
+  display: none;
+}
