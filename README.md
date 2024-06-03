@@ -1,6 +1,6 @@
 ## Mastodon with modern birdsite-like UI
 
-[![Build Status for CSS](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml/badge.svg)](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml) [![Supported Mastodon version](https://img.shields.io/badge/mastodon-v4.2.0-595aff)](https://github.com/mastodon/mastodon) <a href="https://github.com/sponsors/ronilaukkarinen"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsor" height="20px"></a> <a href="https://ko-fi.com/rolle"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi" height="20px"></a> <a href="https://www.buymeacoffee.com/Fd140aV"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-orange.png" height="20px"></a>
+[![Build Status for CSS](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml/badge.svg)](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml) [![Supported Mastodon version](https://img.shields.io/badge/mastodon-v4.3.0-595aff)](https://github.com/mastodon/mastodon) <a href="https://github.com/sponsors/ronilaukkarinen"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsor" height="20px"></a> <a href="https://ko-fi.com/rolle"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi" height="20px"></a> <a href="https://www.buymeacoffee.com/Fd140aV"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-orange.png" height="20px"></a>
 
 Blasphemy! Yes, I know, but I just had to do this. I wanted to see if it's possible to get <a href="https://github.com/mastodon/mastodon">Mastodon</a> default user interface to resemble Twitter, but be a lot better than it ever was.
 
@@ -11,7 +11,7 @@ Read the blog post: [The day I decided to build my own "Twitter"](https://rolle.
 
 ## [Live demo on mementomori.social](https://mementomori.social)
 
-![image](https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/16a207ea-aafa-46ce-bf05-69b84080751b)
+![mbui](https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/8006e3ba-a902-40f5-9047-048b29f075db)
 
 ## Table of contents
 
@@ -34,13 +34,11 @@ Read the blog post: [The day I decided to build my own "Twitter"](https://rolle.
     5. [Why don't you just run Mastodon Bird UI in a separate URL?](#why-dont-you-just-run-mastodon-bird-ui-in-a-separate-url)
     6. [Is the advanced web interface styled](#is-the-advanced-web-interface-styled)
     7. [Why the admin interface is not styled?](#why-the-admin-interface-is-not-styled)
-    8. [Can you add background-color for compose form box area?](#can-you-add-background-color-for-compose-form-box-area)
-    9. [Can you change compose form height and font-size?](#can-you-change-compose-form-height-and-font-size)
-    10. [Can you add feature x?](#can-you-add-feature-x)
-    11. [Can you make it look like this by default?](#can-you-make-it-look-like-this-by-default)
-    12. [How to get to settings or faves on mobile?](#how-to-get-to-settings-or-faves-on-mobile)
-    13. [Automatic dark/light mode possible?](#automatic-darklight-mode-possible)
-    14. [I like it so much, why it can't be the default Mastodon UI](#i-like-it-so-much-why-it-cant-be-the-default-mastodon-ui)
+    8. [Can you add feature x?](#can-you-add-feature-x)
+    9. [Can you make it look like this by default?](#can-you-make-it-look-like-this-by-default)
+    10. [How to get to settings or faves on mobile?](#how-to-get-to-settings-or-faves-on-mobile)
+    11. [Automatic dark/light mode possible?](#automatic-darklight-mode-possible)
+    12. [I like it so much, why it can't be the default Mastodon UI](#i-like-it-so-much-why-it-cant-be-the-default-mastodon-ui)
 10. [Goals](#goals)
 11. [Accessibility](#accessibility)
     1. [ How to install an Accessible version built for people with serious vision impairment](#how-to-install-an-accessible-version-built-for-people-with-serious-vision-impairment)
@@ -49,7 +47,9 @@ Read the blog post: [The day I decided to build my own "Twitter"](https://rolle.
 
 Because you can? Let's face it, we're kinda used to it, Mastodon already resembles the birdsite. Twitter UI is not bad, it's just that it's not for everyone. Twitter (in my opinion) made some bad choices with the new UI for example with the typography, so in a sense I wanted to see if I could make Mastodon look **like Twitter, but better**.
 
-This is why I have defaulted Mastodon deep purple colors in this "theme", if you will. If you really want the vanilla birdsite-look, please modify the colors yourself. Or go to the hellsite if you really love it so much.
+This is why I have defaulted Mastodon deep purple colors in this "theme", if you will. If you really want the vanilla birdsite-look, please modify the colors yourself.
+
+![image](https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/4e405e65-f5b7-4fe2-a172-5a620ba8743a)
 
 ![224368120-5f7bddc9-1702-4279-b297-35a4829e8a3b](https://user-images.githubusercontent.com/1534150/227730434-8a649484-d46c-4b5a-8137-930a302e54d8.png)
 
@@ -352,41 +352,6 @@ Yes! From version 1.5.4 multiple columns are supported. Apply layout-multiple-co
 ### Why the admin interface is not styled?
 
 We don't spend much time in the admin interface and it's not a priority for me to style it. It would mean too much work and it's not worth it right now.
-
-### Can you add background-color for compose form box area?
-
-Aesthetically I prefer left and right sides to be "floaty" and I follow the design language from Twitter even if the compose form is there inside the center column. See [this issue](https://github.com/ronilaukkarinen/mastodon-bird-ui/issues/10) for the decision not to have it there by default.
-
-You can add it yourself by adding this to your Custom CSS:
-
-```css
-/* Add background color for the compose form */
-/* stylelint-disable-next-line no-duplicate-selectors */
-.layout-single-column .compose-form .compose-form__autosuggest-wrapper,
-.layout-single-column .compose-form .compose-form__buttons-wrapper {
-  background-color: var(--color-mud);
-  border-color: var(--color-mud);
-  padding-top: 0;
-}
-
-/* Fixes to bottom row when there's a background */
-.layout-single-column .compose-form .compose-form__buttons-wrapper {
-  padding-bottom: calc(var(--gap-default) / 2);
-}
-```
-
-### Can you change compose form height and font-size?
-
-Yes YOU can. But they're not there by default, see [this post](https://mementomori.social/@rolle/110657416001531854). Box size has been set to a certain max-height because it helps the people who use assistive on-screen keyboard (suggestion from [@rmattila74](https://energydon.fi/@rmattila74)). For this reason I'm not going to increase height or make it resize too much by default. You can do these modifications for yourself, here's the code for you:
-
-```css
-.layout-single-column .compose-form .autosuggest-textarea__textarea {
-  font-size: 18px;
-  min-height: 300px;
-}
-```
-
-Tweak the values as you like.
 
 ### Can you add feature x?
 

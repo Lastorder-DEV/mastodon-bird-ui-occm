@@ -1,4 +1,4 @@
-### 2.0.0rc17: 2024-02-25
+### 2.0.0rc37: 2024-04-06
 
 * Prepare for 4.3.0 release with SVG icons
 * Add icon support for new SVG icons, replace icons for Home, Notifications, Explore, Live feeds, Private mentions, bookmarks, Favorites, Preferences and Lists
@@ -44,6 +44,25 @@
 * Fix video aspect-ratio for embeds
 * Fixes to boost and heart animations in single and multiple columns
 * Fix explore icon for the new class (PR #29395)
+* Remove borders around account header fields on v4.3.0-alpha.3-2024-03-22
+* Change server icon for account__domain-pill__popout__parts on v4.3.0-alpha.3-2024-03-22
+* Add styles for the new popout on v4.3.0-alpha.3-2024-03-22
+* Fix: Theme footer sits on top of other elements #114
+* Fix reply indicator not truncating properly
+* Fix borders in some part of the layout on v4.3.0-alpha.3-2024-03-22
+* Fix list item center alignment
+* Fade in list panel
+* More compact compose button on mobile
+* More compact header bar on mobile (thanks @nileane!)
+* Replace column settings icon for both single and advanced column views
+* Fix compose form styles on mobile
+* Change compose form resizability to follow core
+* Remove Safari PWA top bar fix replacing by compact header on mobile
+* Change column-link preferences icon
+* Fix post button running away if compose form message is too long
+* Fix star icon misalignment for numbered items, Fixes #116
+* Fix boost icon misalignment when clicked the detailed view boost icon on advanced web interface, Fixes #112
+* Fix a regression for 4.3.0-alpha.3-2024-04-06 caused by https://github.com/mastodon/mastodon/commit/4f068d4fcc4d134fcbd56faa8f39c608dd343417
 
 ### 1.8.3: 2023-11-12
 
