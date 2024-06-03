@@ -49,7 +49,7 @@ Because you can? Let's face it, we're kinda used to it, Mastodon already resembl
 
 This is why I have defaulted Mastodon deep purple colors in this "theme", if you will. If you really want the vanilla birdsite-look, please modify the colors yourself.
 
-![image](https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/4e405e65-f5b7-4fe2-a172-5a620ba8743a)
+![image](https://github.com/Lastorder-DEV/mastodon-bird-ui-occm/assets/1534150/4e405e65-f5b7-4fe2-a172-5a620ba8743a)
 
 ![224368120-5f7bddc9-1702-4279-b297-35a4829e8a3b](https://user-images.githubusercontent.com/1534150/227730434-8a649484-d46c-4b5a-8137-930a302e54d8.png)
 
@@ -142,7 +142,7 @@ The following instances have enabled Mastodon Bird UI for their users, based on 
 
 ## Installation for Mastodon instance admins
 
-1. Copy the contents of [layout-single-column.css](https://github.com/ronilaukkarinen/mastodon-bird-ui/blob/master/layout-single-column.css) and [layout-multiple-columns.css](https://github.com/ronilaukkarinen/mastodon-bird-ui/blob/master/layout-multiple-columns.css) and paste them (or one of them) to the **Custom CSS** in the Appearance settings in your instance (https://_yourinstance_/admin/settings/appearance). It might be recommended using the single layout CSS as "base" and use the advanced view CSS with browser extension (as it's desktop only anyway).
+1. Copy the contents of [layout-single-column.css](https://github.com/Lastorder-DEV/mastodon-bird-ui-occm/blob/master/layout-single-column.css) and [layout-multiple-columns.css](https://github.com/Lastorder-DEV/mastodon-bird-ui-occm/blob/master/layout-multiple-columns.css) and paste them (or one of them) to the **Custom CSS** in the Appearance settings in your instance (https://_yourinstance_/admin/settings/appearance). It might be recommended using the single layout CSS as "base" and use the advanced view CSS with browser extension (as it's desktop only anyway).
 
 ![Screen-Shot-2023-03-31-13-25-52](https://user-images.githubusercontent.com/1534150/229111630-c8975708-134b-4887-b259-a87857193387.png)
 
@@ -162,16 +162,16 @@ Cd to your Mastodon directory (usually $HOME/live) you can run these bash comman
 **Mastodon stable:** `main`
 
 ```bash
-export MASTODON_VERSION_FOR_BIRD_UI="main"
+export MASTODON_VERSION_FOR_BIRD_UI="nightly"
 
 # Create a new folder for the theme
 mkdir -p app/javascript/styles/mastodon-bird-ui
 
 # Download the CSS file for single column layout
-wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/ronilaukkarinen/mastodon-bird-ui/$MASTODON_VERSION_FOR_BIRD_UI/layout-single-column.css -O app/javascript/styles/mastodon-bird-ui/layout-single-column.scss
+wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/Lastorder-DEV/mastodon-bird-ui-occm/$MASTODON_VERSION_FOR_BIRD_UI/layout-single-column.css -O app/javascript/styles/mastodon-bird-ui/layout-single-column.scss
 
 # Download the CSS file for multiple column layout
-wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/ronilaukkarinen/mastodon-bird-ui/$MASTODON_VERSION_FOR_BIRD_UI/layout-multiple-columns.css -O app/javascript/styles/mastodon-bird-ui/layout-multiple-columns.scss
+wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/Lastorder-DEV/mastodon-bird-ui-occm/$MASTODON_VERSION_FOR_BIRD_UI/layout-multiple-columns.css -O app/javascript/styles/mastodon-bird-ui/layout-multiple-columns.scss
 
 # Replace theme-contrast with theme-mastodon-bird-ui-contrast for single column layout
 sed -i 's/theme-contrast/theme-mastodon-bird-ui-contrast/g' app/javascript/styles/mastodon-bird-ui/layout-single-column.scss
@@ -239,7 +239,7 @@ And you're done!
 ## Installation for regular users, contributing and testing
 
 1. Install [Live CSS Editor](https://github.com/webextensions/live-css-editor) (or any other extension like [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) that allows you to inject CSS into web pages) or use [Unite for macOS](https://www.bzgapps.com/unite) or use the [user.js by eg](https://ieji.de/@eg/110174544387143309)
-2. Copy the contents of [layout-single-column.css](https://github.com/ronilaukkarinen/mastodon-bird-ui/blob/master/layout-single-column.css) and [layout-multiple-columns.css](https://github.com/ronilaukkarinen/mastodon-bird-ui/blob/master/layout-multiple-columns.css)
+2. Copy the contents of [layout-single-column.css](https://github.com/Lastorder-DEV/mastodon-bird-ui-occm/blob/master/layout-single-column.css) and [layout-multiple-columns.css](https://github.com/Lastorder-DEV/mastodon-bird-ui-occm/blob/master/layout-multiple-columns.css)
 3. Open extension and paste the contents of both CSS files into the editor
 4. If you use Live CSS Editor, click 📌-icon so the styles will be remembered for the domain or if you want just to use it as needed, activate styles from the extension's popup
 
@@ -253,13 +253,13 @@ If you are using Mastodon Bird UI as option, get the latest changes to your inst
 **Mastodon stable:** `main`
 
 ```bash
-export MASTODON_VERSION_FOR_BIRD_UI="main"
+export MASTODON_VERSION_FOR_BIRD_UI="nightly"
 
 # Download the CSS file for single column layout
-wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/ronilaukkarinen/mastodon-bird-ui/$MASTODON_VERSION_FOR_BIRD_UI/layout-single-column.css -O app/javascript/styles/mastodon-bird-ui/layout-single-column.scss
+wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/Lastorder-DEV/mastodon-bird-ui-occm/$MASTODON_VERSION_FOR_BIRD_UI/layout-single-column.css -O app/javascript/styles/mastodon-bird-ui/layout-single-column.scss
 
 # Download the CSS file for multiple column layout
-wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/ronilaukkarinen/mastodon-bird-ui/$MASTODON_VERSION_FOR_BIRD_UI/layout-multiple-columns.css -O app/javascript/styles/mastodon-bird-ui/layout-multiple-columns.scss
+wget -N --no-check-certificate --no-cache --no-cookies --no-http-keep-alive https://raw.githubusercontent.com/Lastorder-DEV/mastodon-bird-ui-occm/$MASTODON_VERSION_FOR_BIRD_UI/layout-multiple-columns.css -O app/javascript/styles/mastodon-bird-ui/layout-multiple-columns.scss
 
 # Replace theme-contrast with theme-mastodon-bird-ui-contrast for single column layout
 sed -i 's/theme-contrast/theme-mastodon-bird-ui-contrast/g' app/javascript/styles/mastodon-bird-ui/layout-single-column.scss
