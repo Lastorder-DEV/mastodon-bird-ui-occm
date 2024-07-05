@@ -1,3 +1,13 @@
+### 2.0.0rc39: 2024-06-30
+
+* Fix bottomless card and add styles for more-from-author
+
+### 2.0.0rc38: 2024-06-30
+
+* Remove outdated links from the README #121 (thanks @mackuba!)
+* Fix: Consistent border-radius for buttons #123
+* Fix: Search item in sidebar misplaced when disabling trends #118
+
 ### 2.0.0rc37: 2024-04-06
 
 * Prepare for 4.3.0 release with SVG icons
