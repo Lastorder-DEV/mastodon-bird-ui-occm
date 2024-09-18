@@ -1,3 +1,45 @@
+### 2.0.0rc50: 2024-09-13
+
+* Fix private message indicator not sticking
+
+### 2.0.0rc49: 2024-09-07
+
+* Add new icons for Administration and Moderation column links in 4.3.0-beta.1 (2024-09-07)
+
+### 2.0.0rc48: 2024-09-07
+
+* Fix indicator for private mentions when grouped notifications are enabled in 4.3.0
+* Add support for Administration and Moderation column-links in 4.3.0-beta.1 (2024-09-07)
+
+### 2.0.0rc47: 2024-08-23
+
+* Add the same consistent content warning styles to the compose form
+* Show full content warning instead of hiding the overlapping part
+
+### 2.0.0rc46: 2024-08-23
+
+* Fix close icon overlapping inside compose form
+
+### 2.0.0rc45: 2024-08-23
+
+* Fix load more icon dimensions
+* Fix unread notification group styles for v4.3.0-beta.1
+
+### 2.0.0rc44: 2024-08-23
+
+* Support for v4.3.0-beta.1+mementomods-2024-08-23
+* Support for new content warnings presented in v4.3.0-beta.1 (thanks @shleeable!), Fixes #128
+
+### 2.0.0rc43: 2024-07-28
+
+* Fix Create account button not clickable on mobile
+
+### 2.0.0rc42: 2024-07-11
+
+* Support for grouped notifications [#30440](https://github.com/mastodon/mastodon/pull/30440)
+* Finalize styles for custom icons in grouped notifications
+* Fixes for grouped and ungrouped layout in notifications
+
 ### 2.0.0rc39: 2024-06-30
 
 * Fix bottomless card and add styles for more-from-author
