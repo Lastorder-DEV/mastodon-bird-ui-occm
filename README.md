@@ -1,6 +1,6 @@
 ## Mastodon with modern birdsite-like UI
 
-[![Build Status for CSS](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml/badge.svg)](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml) [![Supported Mastodon version](https://img.shields.io/badge/mastodon-v4.3.0-595aff)](https://github.com/mastodon/mastodon) <a href="https://github.com/sponsors/ronilaukkarinen"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsor" height="20px"></a> <a href="https://ko-fi.com/rolle"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi" height="20px"></a> <a href="https://www.buymeacoffee.com/Fd140aV"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-orange.png" height="20px"></a>
+[![Build Status for CSS](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml/badge.svg)](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml) [![Supported Mastodon version](https://img.shields.io/badge/mastodon-v4.3.2-595aff)](https://github.com/mastodon/mastodon) <a href="https://github.com/sponsors/ronilaukkarinen"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsor" height="20px"></a> <a href="https://ko-fi.com/rolle"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi" height="20px"></a> <a href="https://www.buymeacoffee.com/Fd140aV"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-orange.png" height="20px"></a>
 
 Blasphemy! Yes, I know, but I just had to do this. I wanted to see if it's possible to get <a href="https://github.com/mastodon/mastodon">Mastodon</a> default user interface to resemble Twitter, but be a lot better than it ever was.
 
@@ -139,7 +139,11 @@ The following instances have enabled Mastodon Bird UI for their users, based on 
 | [supebase.com](https://supebase.com)                                     | Site theme                | Bird UI Modified | 1              | Yes         |
 | [buddyverse.xyz](https://buddyverse.xyz)                                 | Site theme                | Mastodon Bird UI | 6+             | Yes         |
 | [mastodon.bsd.cafe](https://mastodon.bsd.cafe/)                          | Site theme                | Mastodon Bird UI | 70+            | Yes         |
+| [jkpg.rocks](https://jkpg.rocks/)                                        | Site theme                | Mastodon Bird UI | 2+             | Yes         |
+| [convo.casa](https://convo.casa)                                         | Site theme                | Mastodon Bird UI | 5000+          | No          |
+| [social.kryta.app](https://social.kryta.app)                             | Custom CSS                | Mastodon Bird UI | <100           | Yes         |
 | [everythingbagel.social](https://everythingbagel.social)                 | Site theme                | Bagel UI         | 5              | Yes         |
+| [social.vivaldi.net](https://social.vivaldi.net)                         | Site theme                | Mastodon Bird UI | 6700+          | No          |
 
 ## Installation for Mastodon instance admins
 
@@ -232,7 +236,7 @@ rm -rfv public/packs
 yarn install
 RAILS_ENV=production bundle exec rails assets:precompile
 sudo systemctl restart mastodon-web mastodon-sidekiq mastodon-streaming
-sudo systemctl restart postgresql 
+sudo systemctl restart postgresql
 ```
 
 And you're done!
@@ -309,12 +313,12 @@ There is support for threads available for the nightly version since ([see PR #2
 
 ### Micro-interactions
 
-There are two micro-interaction animations in this UI, both are inspired by the Twitter's original UI animation. The star is originally a work of 
+There are two micro-interaction animations in this UI, both are inspired by the Twitter's original UI animation. The star is originally a work of
 a Twitter designer [Brian Waddington](https://dribbble.com/shots/1884504-Twitter-Fav). The heart is by Twitter design team. Both animations have been completely re-created by me, frame by frame. The star animation itself contains 100 hand made frames.
 
 | Twitter likes | Twitter fave star (2015) | Boost animation |
 | ------------- | ------------- |------------ |
-| <img width="70%" src="https://user-images.githubusercontent.com/1534150/230135110-6391e061-10c9-4819-af8b-7144b31dac93.gif" alt="heart" /> | <img src="https://user-images.githubusercontent.com/1534150/230135096-4d1ac9b2-290b-41da-a136-985e908868fa.gif" alt="star"> | <img src="https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/ef02d2b8-14bc-4dbc-9b48-112c723c71cb" alt="boost"> | 
+| <img width="70%" src="https://user-images.githubusercontent.com/1534150/230135110-6391e061-10c9-4819-af8b-7144b31dac93.gif" alt="heart" /> | <img src="https://user-images.githubusercontent.com/1534150/230135096-4d1ac9b2-290b-41da-a136-985e908868fa.gif" alt="star"> | <img src="https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/ef02d2b8-14bc-4dbc-9b48-112c723c71cb" alt="boost"> |
 
 If you like the heart, just remove everything between `Star animation micro-interactions start (depends on the heart icon above)` and `Star animation micro-interactions end`.
 

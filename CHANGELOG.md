@@ -1,3 +1,86 @@
+### 2.1.2rc6: 2024-12-26
+
+* Fix double icons in list modal
+
+### 2.1.2rc5: 2024-12-25
+
+* Fix back button background on mobile
+
+### 2.1.2rc4: 2024-12-24
+
+* Fix double border on gifs
+
+### 2.1.2rc3: 2024-12-20
+
+* Fix media gallery with blurred image getting cut off
+
+### 2.1.2rc2: 2024-12-15
+
+* Fix search icon for 4.4.0-alpha.1+mementomods-2024-12-15 changes
+
+### 2.1.2rc1: 2024-12-15
+
+* Support new lists feature in Mastodon v4.4.0-alpha.1 (2024-12-15)
+
+### 2.1.1: 2024-12-15
+
+* Reintroduce Threads-like media proportions for single column mode, missing since e2bb415 (2024-12-10)
+
+### 2.1.0: 2024-12-15
+
+* Fix star icon active position in single column mode
+* Fix other regressions with star icon alignment when hearts is enabled
+
+### 2.0.9: 2024-12-09
+
+* Fix embed media gallery proportions
+* Use darker bg for embeds by default
+* Hide scrollbars from embeds
+
+### 2.0.8: 2024-12-08
+
+* Make sure embed has a background color
+
+### 2.0.7: 2024-12-07
+
+* Fix incorrect class issue: Regression with the top bar being fully transparent
+
+### 2.0.6: 2024-12-07
+
+* Fix top bar showing up when there is no column header title (thanks @ikkeT!)
+* Fix star icon misalignment in Mastodon v4.4.0-alpha.1
+* Fix imageless article cards don't display correctly, Fixes #137 (thanks @AlternateRT!)
+* Fix numbered heart animation in advanced view (thanks @stedi!)
+* Fix media gallery margin in advanced view
+* Fix issues with the nav bar in 2024-11-09
+* More unified background and borders in the settings boxes
+* Use active color instead of rotate in settings icon
+* Fix navigation issues in nightly 2024-11-09
+* Remove stylelint recommended, fix unknown rule
+
+### 2.0.5: 2024-11-10
+
+* Add unit test to test for CSS syntax errors #141
+* Add custom validator for comma errors #141
+* Fix trailing comma errors in CSS files #143 Fixes #141 (thanks @thomas-pike!)
+
+### 2.0.4: 2024-10-18
+
+* Fix hover bubble position if the button has counter
+
+### 2.0.3: 2024-10-10
+
+* Fix advanced view compose form media attachment bug (thanks @CliffWade@allthingstech.social!)
+* Make the media attachment style more seamless
+
+### 2.0.2: 2024-10-08
+
+* Fix a regression with the content warning text wrapping unintentionally in the advanced view
+
+### 2.0.1: 2024-10-08
+
+* Fixes to heart icon on servers that have numbers enabled
+
 ### 2.0.0: 2024-10-08
 
 * Fixes to heart animation
@@ -246,6 +329,18 @@
 * Fix star icon misalignment for numbered items, Fixes #116
 * Fix boost icon misalignment when clicked the detailed view boost icon on advanced web interface, Fixes #112
 * Fix a regression for 4.3.0-alpha.3-2024-04-06 caused by https://github.com/mastodon/mastodon/commit/4f068d4fcc4d134fcbd56faa8f39c608dd343417
+
+### 1.8.5: 2024-02-10
+
+* Add profile link icons for Facebook and Bandcamp (from 2.0.0rc/nightly)
+* Add WordPress profile icon (from 2.0.0rc13/nightly)
+* Add Friendica profile icon #101 (thanks @expertmanofficial!) (from 2.0.0rc13/nightly)
+* Add an icon for genderless pronouns #101 (from 2.0.0rc13/nightly)
+
+### 1.8.4: 2024-02-09
+
+* Update bluesky icon #106 (thanks @dhelonious!)
+* Fix Carriage Return after a custom emoji in the bio's Extra fields #104 (thanks @manuviens!)
 
 ### 1.8.3: 2023-11-12
 
