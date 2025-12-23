@@ -350,15 +350,9 @@ if [[ "$ADD_VARIATIONS" =~ ^[Yy]$ ]] || [ -z "$UPDATE_MODE" ]; then
 
   if [[ "$ADD_VARIATIONS" =~ ^[Yy]$ ]]; then
     add_theme_entry "mastodon-bird-ui-dark-change-to-stars" "styles/mastodon-bird-ui-dark-change-to-stars.scss"
-    add_theme_entry "hide-finnish" "styles/hide-finnish.scss"
-    add_theme_entry "hide-finnish-change-to-stars" "styles/hide-finnish-change-to-stars.scss"
-    add_theme_entry "hide-translate-links" "styles/hide-translate-links.scss"
-    add_theme_entry "mastodon-bird-ui-light-hide-finnish" "styles/mastodon-bird-ui-light-hide-finnish.scss"
     add_theme_entry "mastodon-bird-ui-light-hide-finnish-change-to-stars" "styles/mastodon-bird-ui-light-hide-finnish-change-to-stars.scss"
-    add_theme_entry "mastodon-bird-ui-light-hide-translate-links" "styles/mastodon-bird-ui-light-hide-translate-links.scss"
     add_theme_entry "mastodon-bird-ui-contrast" "styles/mastodon-bird-ui-contrast.scss"
     add_theme_entry "mastodon-bird-ui-accessible" "styles/mastodon-bird-ui-accessible.scss"
-    add_theme_entry "mastodon-bird-ui-accessible-hide-finnish" "styles/mastodon-bird-ui-accessible-hide-finnish.scss"
     add_theme_entry "mastodon-bird-ui-accessible-plus" "styles/mastodon-bird-ui-accessible-plus.scss"
   fi
 
@@ -367,7 +361,7 @@ if [[ "$ADD_VARIATIONS" =~ ^[Yy]$ ]] || [ -z "$UPDATE_MODE" ]; then
   echo "Updating locale files..."
 
   EN_LOCALE="$MASTODON_PATH/config/locales/en.yml"
-  FI_LOCALE="$MASTODON_PATH/config/locales/fi.yml"
+  KO_LOCALE="$MASTODON_PATH/config/locales/ko.yml"
 
   add_locale_entry() {
     local file="$1"
@@ -388,34 +382,22 @@ if [[ "$ADD_VARIATIONS" =~ ^[Yy]$ ]] || [ -z "$UPDATE_MODE" ]; then
   if [ -z "$UPDATE_MODE" ]; then
     add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-dark" "Mastodon Bird UI (Dark)" "en.yml"
     add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-light" "Mastodon Bird UI (Light)" "en.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-dark" "Mastodon Bird UI (tumma)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-light" "Mastodon Bird UI (vaalea)" "fi.yml"
+    add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-dark" "유사 트위터 (어두움, 하트)" "ko.yml"
+    add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-light" "유사 트위터 (밝음, 하트)" "ko.yml"
   fi
 
   if [[ "$ADD_VARIATIONS" =~ ^[Yy]$ ]]; then
     add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-dark-change-to-stars" "Mastodon Bird UI (Dark, Stars)" "en.yml"
-    add_locale_entry "$EN_LOCALE" "hide-finnish" "Mastodon Bird UI (Dark, hide translate Finnish link)" "en.yml"
-    add_locale_entry "$EN_LOCALE" "hide-finnish-change-to-stars" "Mastodon Bird UI (Dark, Stars, hide translate Finnish link)" "en.yml"
-    add_locale_entry "$EN_LOCALE" "hide-translate-links" "Mastodon Bird UI (Dark, hide all Translate links)" "en.yml"
-    add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-light-hide-finnish" "Mastodon Bird UI (Light, hide Finnish)" "en.yml"
     add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-light-hide-finnish-change-to-stars" "Mastodon Bird UI (Light, Stars, hide Finnish)" "en.yml"
-    add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-light-hide-translate-links" "Mastodon Bird UI (Light, hide Translate links)" "en.yml"
     add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-contrast" "Mastodon Bird UI (High contrast)" "en.yml"
     add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-accessible" "Mastodon Bird UI (Accessible)" "en.yml"
-    add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-accessible-hide-finnish" "Mastodon Bird UI (Accessible, hide Finnish)" "en.yml"
     add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-accessible-plus" "Mastodon Bird UI (Accessible Plus)" "en.yml"
 
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-dark-change-to-stars" "Mastodon Bird UI (tumma, tähdet)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "hide-finnish" "Mastodon Bird UI (tumma, piilota käännös suomelle)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "hide-finnish-change-to-stars" "Mastodon Bird UI (tumma, tähdet, piilota käännös suomelle)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "hide-translate-links" "Mastodon Bird UI (tumma, piilota käännöslinkit)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-light-hide-finnish" "Mastodon Bird UI (vaalea, piilota käännös suomelle)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-light-hide-finnish-change-to-stars" "Mastodon Bird UI (vaalea, tähdet, piilota käännös suomelle)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-light-hide-translate-links" "Mastodon Bird UI (vaalea, piilota käännöslinkit)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-contrast" "Mastodon Bird UI (suuri kontrasti)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-accessible" "Mastodon Bird UI (saavutettava)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-accessible-hide-finnish" "Mastodon Bird UI (saavutettava, piilota käännös suomelle)" "fi.yml"
-    add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-accessible-plus" "Mastodon Bird UI (saavutettava Plus)" "fi.yml"
+    add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-dark-change-to-stars" "유사 트위터 (어두움, 별)" "ko.yml"
+    add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-light-hide-finnish-change-to-stars" "유사 트위터 (밝음, 별)" "ko.yml"
+    add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-contrast" "유사 트위터 (고대비)" "ko.yml"
+    add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-accessible" "유사 트위터 (접근성)" "ko.yml"
+    add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-accessible-plus" "유사 트위터 (접근성 플러스)" "ko.yml"
   fi
 fi
 
