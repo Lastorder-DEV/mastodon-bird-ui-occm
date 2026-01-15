@@ -1,3 +1,8 @@
+### 4.0.0-alpha.0-2: 2026-01-05
+
+* Remove dead code: fade in list panels no longer functional
+* Remove CSS properties and icons that are no longer in use since Mastodon 4.2 (replaced by buttons and drop downs, deprecated in older versions, etc.): `--icon-share-detailed-status-action-bar`, `--color-light-fuchsia-pink`, `--icon-follow-hashtag', `--icon-unfollow-hashtag`, `--icon-star`, `--icon-share`, _`--compose-form-linear-gradient`. `--active-header-box-shadow`, `--icon-users-column-link`, `--icon-plus-red`, `--icon-cross-green`, `--icon-cog`, `--icon-genderless-pronouns`, `--icon-verified`
+
 ### 4.0.0-alpha.0-1: 2025-12-22
 
 * Make dev mode authentic by using only `data-user-theme` attribute instead of artificial `.mastodon-bird-ui` class

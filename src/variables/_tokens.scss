@@ -4,6 +4,9 @@
 // - data-user-theme selectors: Mastodon core installation and dev mode
 // stylelint-disable no-duplicate-selectors
 
+// Most of the stuff comes from Mastodon core, so these stylelint errors need to be disabled
+// stylelint-disable plugin/no-unused-custom-properties
+
 // Dark theme tokens (only for dark Bird UI themes)
 html:has(body:not(.admin)).theme-dark,
 html.theme-mastodon-bird-ui,
