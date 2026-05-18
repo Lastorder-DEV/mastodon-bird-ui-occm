@@ -275,7 +275,7 @@ echo ""
 echo -e "${BLUE}[4/4] Updating locale files...${NC}"
 
 EN_LOCALE="$MASTODON_PATH/config/locales/en.yml"
-FI_LOCALE="$MASTODON_PATH/config/locales/fi.yml"
+KO_LOCALE="$MASTODON_PATH/config/locales/ko.yml"
 
 # Clean up stale locale entries from old theme system (removed in Mastodon #37612)
 remove_stale_locale_entry() {
@@ -293,7 +293,7 @@ remove_stale_locale_entry() {
 
 STALE_THEME_KEYS="mastodon-dark mastodon-light contrast system mastodon-bird-ui-dark mastodon-bird-ui-light mastodon-bird-ui-contrast mastodon-bird-ui-dark-change-to-stars hide-finnish hide-finnish-change-to-stars hide-translate-links mastodon-bird-ui-light-hide-finnish mastodon-bird-ui-light-hide-finnish-change-to-stars mastodon-bird-ui-light-hide-translate-links mastodon-bird-ui-accessible-hide-finnish"
 
-for locale_file in "$EN_LOCALE" "$FI_LOCALE"; do
+for locale_file in "$EN_LOCALE" "$KO_LOCALE"; do
   [ ! -f "$locale_file" ] && continue
   lang=$(basename "$locale_file")
   for stale_key in $STALE_THEME_KEYS; do
@@ -304,11 +304,11 @@ done
 # Set the 'default' locale label based on whether Bird UI is the default theme
 if [[ "$SET_DEFAULT" =~ ^[Yy]$ ]]; then
   sed -i "s/^    default: Mastodon.*/    default: Mastodon Bird UI/" "$EN_LOCALE"
-  sed -i "s/^    default: Mastodon.*/    default: Mastodon Bird UI/" "$FI_LOCALE"
+  sed -i "s/^    default: Mastodon.*/    default: Mastodon Bird UI/" "$KO_LOCALE"
   echo -e "  ${GREEN}Set:${NC} default locale -> Mastodon Bird UI"
 else
   sed -i "s/^    default: Mastodon Bird UI.*/    default: Mastodon/" "$EN_LOCALE" 2>/dev/null
-  sed -i "s/^    default: Mastodon Bird UI.*/    default: Mastodon/" "$FI_LOCALE" 2>/dev/null
+  sed -i "s/^    default: Mastodon Bird UI.*/    default: Mastodon/" "$KO_LOCALE" 2>/dev/null
 fi
 
 add_locale_entry() {
@@ -331,10 +331,10 @@ add_locale_entry() {
 if [[ "$SET_DEFAULT" =~ ^[Yy]$ ]]; then
   # Bird UI is default, so add locale for the stock Mastodon theme
   add_locale_entry "$EN_LOCALE" "mastodon-dark" "Mastodon" "en.yml"
-  add_locale_entry "$FI_LOCALE" "mastodon-dark" "Mastodon" "fi.yml"
+  add_locale_entry "$KO_LOCALE" "mastodon-dark" "Mastodon" "ko.yml"
 else
   add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-auto" "Mastodon Bird UI" "en.yml"
-  add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-auto" "Mastodon Bird UI" "fi.yml"
+  add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-auto" "유사 트위터" "ko.yml"
 fi
 
 # Variation locale entries
@@ -342,8 +342,8 @@ if [[ "$ADD_VARIATIONS" =~ ^[Yy]$ ]]; then
   add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-accessible" "Mastodon Bird UI (Accessible)" "en.yml"
   add_locale_entry "$EN_LOCALE" "mastodon-bird-ui-accessible-plus" "Mastodon Bird UI (Accessible Plus)" "en.yml"
 
-  add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-accessible" "Mastodon Bird UI (saavutettava)" "fi.yml"
-  add_locale_entry "$FI_LOCALE" "mastodon-bird-ui-accessible-plus" "Mastodon Bird UI (saavutettava Plus)" "fi.yml"
+  add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-accessible" "유사 트위터 (접근성)" "ko.yml"
+  add_locale_entry "$KO_LOCALE" "mastodon-bird-ui-accessible-plus" "유사 트위터 (접근성 플러스)" "ko.yml"
 fi
 
 # --- Fix ownership and permissions ---
