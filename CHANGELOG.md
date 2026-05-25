@@ -1,9 +1,21 @@
 ### [Unreleased]
 
+* Move Notifications to the second slot in the navigation menu
+* Remove border-bottom from the trends heading
+
+### 4.0.0-alpha.8.rc2: 2026-05-24
+
+* Hide the follows-you badge icon and nudge the badge with transform translate(-1px, 1px) for alignment
+* Scope the larger 133.5px profile avatar to viewports 760px and up so mobile keeps the smaller size
+* Restore navigation menu order after upstream wrapped items in list elements: Lists and Followed tags sit at the bottom with More last
+* Adapt profile styles to the new account_header module classes and restore avatar size, badge spacing, and bar layout after upstream removed the old classes in #38920
 * Update profile tabs, name, avatar wrapper, badges, handle help, and familiar followers selectors to the new `_comp_account_header__*` and `_comp_tab_list__*` module classes (upstream rename in #38863)
 * Restore even profile tab distribution at all viewport widths
 * Add explicit `margin-bottom: 16px` on familiar followers under the new module class so spacing stays consistent when no role badges are rendered
 * Override `object-fit` to `cover` on video previews when a content warning placeholder is shown, so portrait videos no longer letterbox the spoiler image
+* Fix main navigation items appearing side by side after upstream wrapped them in list items, Closes #187
+* Hide the navigation list-item separators that replaced the old `hr` elements
+* Reduce navigation panel right padding to 10px so long menu labels fit better
 
 ### 4.0.0-alpha.8.rc: 2026-05-03
 
