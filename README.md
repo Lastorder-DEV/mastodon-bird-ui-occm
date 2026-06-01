@@ -19,7 +19,7 @@ Read the blog post: [The day I decided to build my own "Twitter"](https://rolle.
 2. [Features](#features)
 3. [List of instances that use Mastodon Bird UI](#list-of-instances-that-use-mastodon-bird-ui)
 4. [Installation for Mastodon instance admins](#installation-for-mastodon-instance-admins)
-5. [Make Mastodon Bird UI as optional by integrating it as 'Site theme' in settings for all users](#make-mastodon-bird-ui-as-optional-by-integrating-it-as-site-theme-in-settings-for-all-users)
+5. [Make Mastodon Bird UI available as a glitch-soc skin](#make-mastodon-bird-ui-available-as-a-glitch-soc-skin)
 6. [Installation for regular users, contributing and testing](#installation-for-regular-users-contributing-and-testing)
 7. [Development](#development)
 8. [Updating instructions](#updating-instructions)
@@ -155,11 +155,11 @@ The following instances have enabled Mastodon Bird UI for their users, based on 
 
 ![Screen-Shot-2023-03-31-13-25-52](https://user-images.githubusercontent.com/1534150/229111630-c8975708-134b-4887-b259-a87857193387.png)
 
-## Make Mastodon Bird UI as optional by integrating it as 'Site theme' in settings for all users
+## Make Mastodon Bird UI available as a glitch-soc skin
 
-Mastodon Bird UI can be integrated as a **Site theme** for all instance users as optional.
+This branch targets [glitch-soc](https://github.com/glitch-soc/mastodon) and installs Mastodon Bird UI as a **skin** for the built-in `glitch` flavour. glitch-soc does not use upstream Mastodon's `config/themes.yml` site-theme pipeline for flavour styling; a skin lives under `app/javascript/skins/glitch/<skin-name>/` and is selected together with the `glitch` flavour.
 
-**Please note**: This requires Mastodon v4.6.0+ and modifies Mastodon's styles directory. Do this at your own risk! I recommend testing in a development environment first.
+**Please note**: This requires glitch-soc with the `glitch` flavour and modifies the instance's `app/javascript/skins/glitch/` directory. Do this at your own risk! I recommend testing in a development environment first.
 
 ![image](https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/b30f19e2-2835-4d92-b40d-cac9922f64b3)
 
@@ -173,13 +173,15 @@ Clone this repository and run the install script:
 git clone https://github.com/ronilaukkarinen/mastodon-bird-ui.git
 cd mastodon-bird-ui
 npm install
-sudo bash scripts/install-to-mastodon.sh --path /path/to/mastodon
+sudo bash scripts/install-to-mastodon.sh --path /path/to/glitch-soc
 ```
 
 The script will:
-- Copy Bird UI source files to `app/javascript/styles/mastodon-bird-ui/`
-- Generate theme entry points for all variants (dark, light, contrast, accessible, etc.)
-- Update `config/themes.yml` with the new themes
+- Verify the target instance has `app/javascript/flavours/glitch/theme.yml`
+- Copy Bird UI source files to `app/javascript/skins/glitch/mastodon-bird-ui/mastodon-bird-ui/`
+- Generate `common.scss` skin packs that first import `@/flavours/glitch/styles/application` and then apply Bird UI overrides
+- Add optional accessible skin variants when run with `--variations`
+- Optionally set `flavour: 'glitch'` and `skin: 'mastodon-bird-ui'` in `config/settings.yml` when run with `--default`
 
 After running the script, rebuild assets and restart services:
 
@@ -192,7 +194,7 @@ sudo systemctl restart mastodon-web
 RAILS_ENV=development bundle exec rails assets:precompile
 ```
 
-Users can now select Bird UI themes in Preferences > Appearance.
+Users can now select the `glitch` flavour and `Mastodon Bird UI` skin in Preferences > Flavours.
 
 ## Installation for regular users
 
@@ -278,12 +280,12 @@ If your Mastodon instance is not at `mementomori.test`, edit `bs-config.js` and 
 
 If you are using **Custom CSS**, just copy and paste the new version of `dist/mastodon-bird-ui.css` to **Custom CSS** textarea in the Appearance settings in your instance (https://_yourinstance_/admin/settings/appearance).
 
-If you are using Mastodon Bird UI as a site theme, update to the latest version:
+If you are using Mastodon Bird UI as a glitch-soc skin, update to the latest version:
 
 ```bash
 cd mastodon-bird-ui
 git pull
-sudo bash scripts/install-to-mastodon.sh --path /path/to/mastodon
+sudo bash scripts/install-to-mastodon.sh --path /path/to/glitch-soc
 ```
 
 Then rebuild assets and restart:
