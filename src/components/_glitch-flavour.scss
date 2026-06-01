@@ -1,0 +1,234 @@
+// glitch-soc flavour compatibility
+// The glitch flavour ships extra React components that do not exist in vanilla
+// Mastodon (local settings, advanced compose controls, quote controls, and
+// extra status metadata). Keep these selectors additive so the Custom CSS build
+// remains safe on upstream Mastodon while the glitch skin gets first-class
+// Bird UI styling.
+.layout-single-column,
+.layout-multiple-columns {
+  // --- Local settings modal -------------------------------------------------
+  .glitch.local-settings {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--dropdown-shadow);
+    color: var(--color-fg);
+    max-height: min(640px, 90vh);
+    max-width: min(860px, 92vw);
+    overflow: hidden;
+  }
+
+  .glitch.local-settings__navigation {
+    background: var(--color-dark);
+    border-right: 1px solid var(--color-border);
+    scrollbar-width: none;
+  }
+
+  .glitch.local-settings__navigation::-webkit-scrollbar,
+  .glitch.local-settings__page::-webkit-scrollbar {
+    display: none;
+    width: 4px;
+  }
+
+  .glitch.local-settings__navigation__item {
+    background: transparent;
+    border-bottom: 0;
+    color: var(--color-light-text);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-semibold);
+    gap: 10px;
+    padding: 14px 18px;
+    transition:
+      background-color 200ms,
+      color 200ms;
+  }
+
+  .glitch.local-settings__navigation__item.active,
+  .glitch.local-settings__navigation__item:hover,
+  .glitch.local-settings__navigation__item:focus {
+    background: var(--color-column-link-hover);
+    color: var(--color-fg);
+  }
+
+  .glitch.local-settings__navigation__item.close,
+  .glitch.local-settings__navigation__item.close:hover,
+  .glitch.local-settings__navigation__item.close:focus {
+    background: var(--color-red);
+    color: #fff;
+  }
+
+  .glitch.local-settings__page {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    padding: 20px;
+  }
+
+  .glitch.local-settings h1 {
+    color: var(--color-fg);
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .glitch.local-settings h2,
+  .glitch.local-settings span.hint,
+  .deprecated-settings-info {
+    color: var(--color-dim);
+  }
+
+  .glitch.local-settings__page__item {
+    background: var(--color-dark);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    padding: 12px;
+  }
+
+  .glitch.local-settings__page__item.boolean,
+  .glitch.local-settings__page__item.radio_buttons {
+    input {
+      accent-color: var(--color-accent);
+    }
+  }
+
+  .glitch.local-settings__page__item.string input,
+  .glitch.local-settings__page__item select,
+  .glitch.local-settings__page__item textarea {
+    background: var(--color-bg-compose-form);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-badges);
+    color: var(--color-fg);
+  }
+
+  .deprecated-settings-info a,
+  .glitch.local-settings__page__item .hint a {
+    color: var(--color-accent);
+  }
+
+  // --- Advanced compose controls ------------------------------------------
+  .compose-form__buttons > div:has(> .icon-button) {
+    display: inline-flex;
+  }
+
+  .compose-form__buttons > div > .icon-button {
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 27px;
+    justify-content: center;
+    width: 27px;
+  }
+
+  .compose-form__buttons > div > .icon-button.active,
+  .compose-form__buttons > div > .icon-button:hover,
+  .compose-form__buttons > div > .icon-button:focus {
+    background: transparent;
+    color: var(--color-accent);
+  }
+
+  .compose-form__poll__footer {
+    border-top: 1px solid var(--color-border);
+    gap: 10px;
+    margin-top: 10px;
+    padding: 12px 0 0;
+  }
+
+  .compose-form__poll__footer__sep {
+    background: var(--color-border);
+  }
+
+  .compose-form__poll__select__label {
+    color: var(--color-dim);
+    font-size: var(--font-size-smaller);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+  }
+
+  .compose-form__poll__select__value {
+    background: transparent;
+    border: 0;
+    color: var(--color-accent);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-semibold);
+    outline: 0;
+  }
+
+  // --- Statuses and quote posts -------------------------------------------
+  .status__info__icons {
+    align-items: center;
+    color: var(--color-dim);
+    display: inline-flex;
+    gap: 4px;
+    order: 2;
+  }
+
+  .status__info__icons .icon {
+    height: 16px;
+    width: 16px;
+  }
+
+  .status__prepend__icon {
+    color: var(--color-dim);
+  }
+
+  .status__quote-cancel {
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: inline-flex;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+  }
+
+  .status__quote-cancel:hover,
+  .status__quote-cancel:focus {
+    background: var(--color-column-link-hover);
+    border-color: var(--color-light-text);
+    color: var(--color-light-text);
+  }
+
+  .detailed-status__quotes {
+    display: inline-flex;
+    font-size: var(--font-size);
+    gap: 4px;
+  }
+
+  .detailed-status__meta .detailed-status__quotes .animated-number {
+    color: var(--color-light-text);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .detailed-status__link > .icon-quote + span::after {
+    color: var(--color-dim);
+    content: "Quotes";
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .detailed-status__meta .detailed-status__link .icon-quote {
+    display: none;
+  }
+
+  // --- Quote/privacy dropdown details --------------------------------------
+  .privacy-dropdown__option__additional {
+    color: var(--color-dim);
+    font-size: var(--font-size-smaller);
+  }
+
+  .privacy-dropdown__option__icon {
+    color: var(--color-accent);
+  }
+}
+
+@media (width <= 630px) {
+  .layout-single-column,
+  .layout-multiple-columns {
+    .glitch.local-settings__navigation {
+      width: 48px;
+    }
+
+    .glitch.local-settings__navigation__item {
+      justify-content: center;
+      padding: 12px;
+    }
+  }
+}

@@ -2977,7 +2977,7 @@ body.layout-single-column, body.layout-multiple-columns {
   display: none;
 }
 
-.layout-single-column .icon-user-plus.column-link__icon path, .layout-single-column .icon.icon-undefined path, .layout-single-column .icon.icon-users path, .layout-single-column [class*="_comp_account_header__buttons"] .optional path, .layout-single-column [class*="_comp_account_header__buttons"] .icon.icon-user-plus path, .layout-single-column .notification__filter-bar .icon.icon-user-plus path, .layout-single-column [class*="_comp_account_header__buttons"] .icon.icon-tasks path, .layout-single-column .notification__filter-bar .icon.icon-tasks path, .layout-single-column .icon.icon-wrapstodon-planet path, .layout-single-column .navigation-panel__legal .column-link[href="/about"] path, .layout-multiple-columns .icon-user-plus.column-link__icon path, .layout-multiple-columns .icon.icon-undefined path, .layout-multiple-columns .icon.icon-users path, .layout-multiple-columns [class*="_comp_account_header__buttons"] .optional path, .layout-multiple-columns [class*="_comp_account_header__buttons"] .icon.icon-user-plus path, .layout-multiple-columns .notification__filter-bar .icon.icon-user-plus path, .layout-multiple-columns [class*="_comp_account_header__buttons"] .icon.icon-tasks path, .layout-multiple-columns .notification__filter-bar .icon.icon-tasks path, .layout-multiple-columns .icon.icon-wrapstodon-planet path, .layout-multiple-columns .navigation-panel__legal .column-link[href="/about"] path {
+.layout-single-column .icon-user-plus.column-link__icon path, .layout-single-column .icon.icon-undefined path, .layout-single-column .icon.icon-users path, .layout-single-column .icon.icon-swap-horiz path, .layout-single-column [class*="_comp_account_header__buttons"] .optional path, .layout-single-column [class*="_comp_account_header__buttons"] .icon.icon-user-plus path, .layout-single-column .notification__filter-bar .icon.icon-user-plus path, .layout-single-column [class*="_comp_account_header__buttons"] .icon.icon-tasks path, .layout-single-column .notification__filter-bar .icon.icon-tasks path, .layout-single-column .icon.icon-wrapstodon-planet path, .layout-single-column .navigation-panel__legal .column-link[href="/about"] path, .layout-multiple-columns .icon-user-plus.column-link__icon path, .layout-multiple-columns .icon.icon-undefined path, .layout-multiple-columns .icon.icon-users path, .layout-multiple-columns .icon.icon-swap-horiz path, .layout-multiple-columns [class*="_comp_account_header__buttons"] .optional path, .layout-multiple-columns [class*="_comp_account_header__buttons"] .icon.icon-user-plus path, .layout-multiple-columns .notification__filter-bar .icon.icon-user-plus path, .layout-multiple-columns [class*="_comp_account_header__buttons"] .icon.icon-tasks path, .layout-multiple-columns .notification__filter-bar .icon.icon-tasks path, .layout-multiple-columns .icon.icon-wrapstodon-planet path, .layout-multiple-columns .navigation-panel__legal .column-link[href="/about"] path {
   display: block;
 }
 
@@ -4258,6 +4258,222 @@ body.embed .entry .detailed-status {
   overflow: hidden;
   border: 0 !important;
   border-radius: 0 !important;
+}
+
+.layout-single-column .glitch.local-settings, .layout-multiple-columns .glitch.local-settings {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--dropdown-shadow);
+  color: var(--color-fg);
+  max-width: min(860px, 92vw);
+  max-height: min(640px, 90vh);
+  overflow: hidden;
+}
+
+.layout-single-column .glitch.local-settings__navigation, .layout-multiple-columns .glitch.local-settings__navigation {
+  background: var(--color-dark);
+  border-right: 1px solid var(--color-border);
+  scrollbar-width: none;
+}
+
+.layout-single-column .glitch.local-settings__navigation::-webkit-scrollbar {
+  width: 4px;
+  display: none;
+}
+
+.layout-single-column .glitch.local-settings__page::-webkit-scrollbar {
+  width: 4px;
+  display: none;
+}
+
+.layout-multiple-columns .glitch.local-settings__navigation::-webkit-scrollbar {
+  width: 4px;
+  display: none;
+}
+
+.layout-multiple-columns .glitch.local-settings__page::-webkit-scrollbar {
+  width: 4px;
+  display: none;
+}
+
+.layout-single-column .glitch.local-settings__navigation__item, .layout-multiple-columns .glitch.local-settings__navigation__item {
+  color: var(--color-light-text);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-semibold);
+  background: none;
+  border-bottom: 0;
+  gap: 10px;
+  padding: 14px 18px;
+  transition: background-color .2s, color .2s;
+}
+
+.layout-single-column .glitch.local-settings__navigation__item.active, .layout-single-column .glitch.local-settings__navigation__item:hover, .layout-single-column .glitch.local-settings__navigation__item:focus, .layout-multiple-columns .glitch.local-settings__navigation__item.active, .layout-multiple-columns .glitch.local-settings__navigation__item:hover, .layout-multiple-columns .glitch.local-settings__navigation__item:focus {
+  background: var(--color-column-link-hover);
+  color: var(--color-fg);
+}
+
+.layout-single-column .glitch.local-settings__navigation__item.close, .layout-single-column .glitch.local-settings__navigation__item.close:hover, .layout-single-column .glitch.local-settings__navigation__item.close:focus, .layout-multiple-columns .glitch.local-settings__navigation__item.close, .layout-multiple-columns .glitch.local-settings__navigation__item.close:hover, .layout-multiple-columns .glitch.local-settings__navigation__item.close:focus {
+  background: var(--color-red);
+  color: #fff;
+}
+
+.layout-single-column .glitch.local-settings__page, .layout-multiple-columns .glitch.local-settings__page {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  padding: 20px;
+}
+
+.layout-single-column .glitch.local-settings h1, .layout-multiple-columns .glitch.local-settings h1 {
+  color: var(--color-fg);
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-bold);
+}
+
+.layout-single-column .glitch.local-settings h2, .layout-single-column .glitch.local-settings span.hint, .layout-single-column .deprecated-settings-info, .layout-multiple-columns .glitch.local-settings h2, .layout-multiple-columns .glitch.local-settings span.hint, .layout-multiple-columns .deprecated-settings-info {
+  color: var(--color-dim);
+}
+
+.layout-single-column .glitch.local-settings__page__item, .layout-multiple-columns .glitch.local-settings__page__item {
+  background: var(--color-dark);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+  padding: 12px;
+}
+
+.layout-single-column .glitch.local-settings__page__item.boolean input, .layout-single-column .glitch.local-settings__page__item.radio_buttons input, .layout-multiple-columns .glitch.local-settings__page__item.boolean input, .layout-multiple-columns .glitch.local-settings__page__item.radio_buttons input {
+  accent-color: var(--color-accent);
+}
+
+.layout-single-column .glitch.local-settings__page__item.string input, .layout-single-column .glitch.local-settings__page__item select, .layout-single-column .glitch.local-settings__page__item textarea, .layout-multiple-columns .glitch.local-settings__page__item.string input, .layout-multiple-columns .glitch.local-settings__page__item select, .layout-multiple-columns .glitch.local-settings__page__item textarea {
+  background: var(--color-bg-compose-form);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-badges);
+  color: var(--color-fg);
+}
+
+.layout-single-column .deprecated-settings-info a, .layout-single-column .glitch.local-settings__page__item .hint a, .layout-multiple-columns .deprecated-settings-info a, .layout-multiple-columns .glitch.local-settings__page__item .hint a {
+  color: var(--color-accent);
+}
+
+.layout-single-column .compose-form__buttons > div:has( > .icon-button), .layout-multiple-columns .compose-form__buttons > div:has( > .icon-button) {
+  display: inline-flex;
+}
+
+.layout-single-column .compose-form__buttons > div > .icon-button, .layout-multiple-columns .compose-form__buttons > div > .icon-button {
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  display: inline-flex;
+}
+
+.layout-single-column .compose-form__buttons > div > .icon-button.active, .layout-single-column .compose-form__buttons > div > .icon-button:hover, .layout-single-column .compose-form__buttons > div > .icon-button:focus, .layout-multiple-columns .compose-form__buttons > div > .icon-button.active, .layout-multiple-columns .compose-form__buttons > div > .icon-button:hover, .layout-multiple-columns .compose-form__buttons > div > .icon-button:focus {
+  color: var(--color-accent);
+  background: none;
+}
+
+.layout-single-column .compose-form__poll__footer, .layout-multiple-columns .compose-form__poll__footer {
+  border-top: 1px solid var(--color-border);
+  gap: 10px;
+  margin-top: 10px;
+  padding: 12px 0 0;
+}
+
+.layout-single-column .compose-form__poll__footer__sep, .layout-multiple-columns .compose-form__poll__footer__sep {
+  background: var(--color-border);
+}
+
+.layout-single-column .compose-form__poll__select__label, .layout-multiple-columns .compose-form__poll__select__label {
+  color: var(--color-dim);
+  font-size: var(--font-size-smaller);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+}
+
+.layout-single-column .compose-form__poll__select__value, .layout-multiple-columns .compose-form__poll__select__value {
+  color: var(--color-accent);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-semibold);
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+.layout-single-column .status__info__icons, .layout-multiple-columns .status__info__icons {
+  color: var(--color-dim);
+  order: 2;
+  align-items: center;
+  gap: 4px;
+  display: inline-flex;
+}
+
+.layout-single-column .status__info__icons .icon, .layout-multiple-columns .status__info__icons .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.layout-single-column .status__prepend__icon, .layout-multiple-columns .status__prepend__icon {
+  color: var(--color-dim);
+}
+
+.layout-single-column .status__quote-cancel, .layout-multiple-columns .status__quote-cancel {
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+}
+
+.layout-single-column .status__quote-cancel:hover, .layout-single-column .status__quote-cancel:focus, .layout-multiple-columns .status__quote-cancel:hover, .layout-multiple-columns .status__quote-cancel:focus {
+  background: var(--color-column-link-hover);
+  border-color: var(--color-light-text);
+  color: var(--color-light-text);
+}
+
+.layout-single-column .detailed-status__quotes, .layout-multiple-columns .detailed-status__quotes {
+  font-size: var(--font-size);
+  gap: 4px;
+  display: inline-flex;
+}
+
+.layout-single-column .detailed-status__meta .detailed-status__quotes .animated-number, .layout-multiple-columns .detailed-status__meta .detailed-status__quotes .animated-number {
+  color: var(--color-light-text);
+  font-weight: var(--font-weight-bold);
+}
+
+.layout-single-column .detailed-status__link > .icon-quote + span:after, .layout-multiple-columns .detailed-status__link > .icon-quote + span:after {
+  color: var(--color-dim);
+  content: "Quotes";
+  font-weight: var(--font-weight-semibold);
+}
+
+.layout-single-column .detailed-status__meta .detailed-status__link .icon-quote, .layout-multiple-columns .detailed-status__meta .detailed-status__link .icon-quote {
+  display: none;
+}
+
+.layout-single-column .privacy-dropdown__option__additional, .layout-multiple-columns .privacy-dropdown__option__additional {
+  color: var(--color-dim);
+  font-size: var(--font-size-smaller);
+}
+
+.layout-single-column .privacy-dropdown__option__icon, .layout-multiple-columns .privacy-dropdown__option__icon {
+  color: var(--color-accent);
+}
+
+@media (width <= 630px) {
+  .layout-single-column .glitch.local-settings__navigation, .layout-multiple-columns .glitch.local-settings__navigation {
+    width: 48px;
+  }
+
+  .layout-single-column .glitch.local-settings__navigation__item, .layout-multiple-columns .glitch.local-settings__navigation__item {
+    justify-content: center;
+    padding: 12px;
+  }
 }
 
 .error .dialog .dialog__message p, .error .dialog .dialog__message h1 {
