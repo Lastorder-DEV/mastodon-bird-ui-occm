@@ -1,5 +1,16 @@
 ### [Unreleased]
 
+* Drop trends to 2 items on screen heights below 1080px
+* Remove the trends section top margin
+* Make the navigation menu scrollbar minimal (Firefox thin, WebKit 4px) to match the Bird UI aesthetic
+* Compact the navigation items (font-size 17px, gap 7px) on screen heights below 1080px
+
+### 4.0.0-beta.1.rc: 2026-06-07
+
+* Tighten badge spacing in account list items (override core padding on all badges, nudge Follows you down)
+* Style the verified link badge in account list items (e.g. collections) the same as profile field verified links
+* Style the Follows you badge in account list items (e.g. collections) the same as in profiles
+* Show the Collections nav icon (was hidden by the column-link icon path reset)
 * Move Notifications to the second slot in the navigation menu
 * Remove border-bottom from the trends heading
 
