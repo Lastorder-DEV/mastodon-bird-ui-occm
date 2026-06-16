@@ -1,6 +1,13 @@
 ### [Unreleased]
 
-* Drop trends to 2 items on screen heights below 1080px
+* Hide the native search clear glyph so only the Bird UI X shows, not a second white one
+* Remove the border from the stuck mobile profile buttons bar
+* Raise account timeline filters above the profile header
+* Raise visible status text above the display name so the first row stays clickable
+* Use the solid secondary background for the avatar follow badge hover
+* Cap dropdown menus to the viewport height and make them scrollable on short or zoomed screens
+* Add z-index to status display name so the avatar follow badge stays clickable
+* Drop trends to 2 items on screen heights below 830px (4 items fit above that)
 * Remove the trends section top margin
 * Make the navigation menu scrollbar minimal (Firefox thin, WebKit 4px) to match the Bird UI aesthetic
 * Compact the navigation items (font-size 17px, gap 7px) on screen heights below 1080px
