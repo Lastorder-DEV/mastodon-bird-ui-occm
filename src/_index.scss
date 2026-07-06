@@ -37,6 +37,7 @@
 @use "components/navigation-panel";
 @use "components/follow-button";
 @use "components/search-and-inputs";
+@use "components/form-select";
 @use "components/profile/profile-basics";
 @use "components/profile/profile-link-layout";
 @use "components/profile/profile-platform-icons";
@@ -106,6 +107,11 @@
 
 // Micro interactions
 @use "micro-interactions/heart";
+
+// Navigation/layout formerly bundled in the heart micro-interaction; kept in
+// its original cascade position so dropping the favourite styling for a native
+// favourite animation does not affect the navigation layout.
+@use "components/mobile-navigation";
 
 // Advanced web interface
 @use "layouts/advanced-web-interface";

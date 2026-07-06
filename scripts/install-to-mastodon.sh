@@ -7,7 +7,8 @@
 # It is idempotent - safe to run multiple times. It will:
 #   - Copy/update all Bird UI module files
 #   - Ensure entry point SCSS files exist (creates missing ones, preserves existing)
-#   - Rebuild themes.yml from scratch (removes stale entries pointing to missing files)
+#   - Update themes.yml, preserving other installed themes (e.g. Tangerine) and
+#     only dropping stale entries whose SCSS file no longer exists
 #   - Ensure locale entries exist
 #
 # Usage: sudo bash scripts/install-to-mastodon.sh --path /opt/mastodon
@@ -102,6 +103,17 @@ fi
 echo -e "${GREEN}Mastodon Bird UI $VERSION${NC}"
 echo ""
 
+# Detect a native favourite animation. Some forks (mementomori.social) ship their
+# own favourite star/heart SVG with its own burst, see
+# https://github.com/mementomori-social/mastodon/pull/10. When that is present we
+# must not let Bird UI restyle the favourite button, so the native animation shows.
+NATIVE_FAVOURITES="n"
+if [ -f "$MASTODON_PATH/app/javascript/mastodon/components/favourite_star.tsx" ]; then
+  NATIVE_FAVOURITES="y"
+  echo -e "${YELLOW}Native favourite animation detected; Bird UI will not restyle the favourite button.${NC}"
+  echo ""
+fi
+
 # Ask about variations if not specified via flag
 if [ -z "$ADD_VARIATIONS" ]; then
   read -p "Add/update accessible theme variations (contrast, accessible, accessible-plus)? [y/N]: " ADD_VARIATIONS
@@ -160,8 +172,21 @@ for f in "$SRC_DIR/layouts/"_*.scss; do
 done
 
 # Micro-interactions
+# The favourite restyling lives in _heart.scss and _star.scss. When the target
+# ships a native favourite animation we swap both for _native-favourites.scss,
+# which drops the favourite styling and only re-shows Mastodon's default icons
+# (Bird UI's icon reset would otherwise hide them). Navigation/layout that used
+# to be bundled in _heart.scss now lives in components/_mobile-navigation.scss,
+# so it is unaffected.
 for f in "$SRC_DIR/micro-interactions/"_*.scss; do
-  [ -f "$f" ] && copy_if_exists "$f" "$BIRD_UI_PATH/micro-interactions/$(basename "$f")"
+  [ -f "$f" ] || continue
+  base=$(basename "$f")
+  if [[ "$NATIVE_FAVOURITES" =~ ^[Yy]$ && ( "$base" == "_heart.scss" || "$base" == "_star.scss" ) ]]; then
+    cp "$SRC_DIR/micro-interactions/_native-favourites.scss" "$BIRD_UI_PATH/micro-interactions/$base"
+    echo -e "  ${YELLOW}Native favourites:${NC} $base (Bird UI favourite styling dropped)"
+  else
+    copy_if_exists "$f" "$BIRD_UI_PATH/micro-interactions/$base"
+  fi
 done
 
 # Variants
@@ -253,6 +278,31 @@ add_theme_entry() {
   fi
 }
 
+# Preserve existing non-Bird-UI themes (e.g. Tangerine) before we rewrite the file,
+# so installing Bird UI does not wipe other installed themes. Bird UI's own entries
+# (default, mastodon-dark, mastodon-bird-ui-*) are re-added below; entries whose SCSS
+# file no longer exists are dropped as stale.
+PRESERVED_THEMES=""
+if [ -f "$THEMES_FILE" ]; then
+  while IFS= read -r theme_line; do
+    theme_key="${theme_line%%:*}"
+    theme_key="${theme_key//[[:space:]]/}"
+    [ -z "$theme_key" ] && continue
+    case "$theme_key" in
+      default|mastodon-dark|mastodon-bird-ui-auto|mastodon-bird-ui-accessible|mastodon-bird-ui-accessible-plus)
+        continue ;;
+    esac
+    theme_value="${theme_line#*:}"
+    theme_value="${theme_value//[[:space:]]/}"
+    if [ -n "$theme_value" ] && [ -f "$MASTODON_PATH/app/javascript/$theme_value" ]; then
+      PRESERVED_THEMES+="${theme_key}: ${theme_value}"$'\n'
+      echo -e "  ${GREEN}Preserved:${NC} $theme_key (existing theme)"
+    else
+      echo -e "  ${YELLOW}Dropped stale:${NC} $theme_key (${theme_value:-no path} not found)"
+    fi
+  done < "$THEMES_FILE"
+fi
+
 # Set default theme entry
 if [[ "$SET_DEFAULT" =~ ^[Yy]$ ]]; then
   echo "default: styles/mastodon-bird-ui-auto.scss" > "$THEMES_FILE"
@@ -268,6 +318,11 @@ fi
 if [[ "$ADD_VARIATIONS" =~ ^[Yy]$ ]]; then
   add_theme_entry "mastodon-bird-ui-accessible" "styles/mastodon-bird-ui-accessible.scss"
   add_theme_entry "mastodon-bird-ui-accessible-plus" "styles/mastodon-bird-ui-accessible-plus.scss"
+fi
+
+# Re-add any preserved third-party themes (e.g. Tangerine) captured above
+if [ -n "$PRESERVED_THEMES" ]; then
+  printf '%s' "$PRESERVED_THEMES" >> "$THEMES_FILE"
 fi
 
 # --- Step 4: Update locale files ---

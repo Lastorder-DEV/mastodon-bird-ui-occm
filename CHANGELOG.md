@@ -1,5 +1,17 @@
 ### [Unreleased]
 
+* Make the left navigation scroll so items below Bookmarks (Settings, More) stay reachable at high browser zoom, including extreme zoom on low-resolution screens with the accessible themes
+* Preserve other installed themes (like Tangerine) when installing Bird UI instead of rebuilding themes.yml from scratch
+* Fix the reply post indicator sticking to the left edge in non-thread replies (https://github.com/mastodon/mastodon/pull/39554)
+* Reset the status prepend padding only in reply threads, where Mastodon 4.7.0-alpha.1 adds a thread margin (https://github.com/mastodon/mastodon/pull/39521)
+
+### 4.0.0: 2026-06-19
+
+* Compatible with Mastodon 4.6.0 stable and 4.7.0-alpha.1
+* Indent the collection preview card in feeds so it aligns with the status content (full width in single posts)
+* Fix the heart favourite burst alignment in the single post view
+* Fix the white, unreadable native select options dropdown on settings pages (#188)
+* Detect a native favourite animation and leave the favourite button alone so the fork's own star/heart shows (mementomori-social/mastodon#10)
 * Hide the native search clear glyph so only the Bird UI X shows, not a second white one
 * Remove the border from the stuck mobile profile buttons bar
 * Raise account timeline filters above the profile header
@@ -11,6 +23,9 @@
 * Remove the trends section top margin
 * Make the navigation menu scrollbar minimal (Firefox thin, WebKit 4px) to match the Bird UI aesthetic
 * Compact the navigation items (font-size 17px, gap 7px) on screen heights below 1080px
+* Tune font sizes and line heights across the accessible variants and let the navigation panel overflow show
+* Restore the margin after the profile bio, including plain-text bios with no paragraphs
+* Ship a mastodon-bird-ui-auto.css Custom CSS variant that follows each user's light/dark color scheme
 
 ### 4.0.0-beta.1.rc: 2026-06-07
 

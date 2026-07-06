@@ -1,4 +1,4 @@
-## Mastodon with modern birdsite-like UI
+## 🐦 Mastodon with modern birdsite-like UI
 
 ![Mastodon](https://img.shields.io/badge/mastodon-v4.6.0+-6364FF?style=for-the-badge&logo=mastodon&logoColor=white) ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white) [![Build Status](https://img.shields.io/github/actions/workflow/status/ronilaukkarinen/mastodon-bird-ui/styles.yml?style=for-the-badge&logo=github)](https://github.com/ronilaukkarinen/mastodon-bird-ui/actions/workflows/styles.yml) <a href="https://github.com/sponsors/ronilaukkarinen"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsor" height="28px"></a> <a href="https://ko-fi.com/rolle"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi" height="28px"></a>
 
@@ -146,12 +146,18 @@ The following instances have enabled Mastodon Bird UI for their users, based on 
 | [social.vivaldi.net](https://social.vivaldi.net)                         | Site theme                | Mastodon Bird UI | 6700+          | No          |
 | [wxw.moe](https://wxw.moe)                                               | Site theme                | Mastodon Bird UI | 3500+          | Yes         |
 | [mastodon.com.pl](https://mastodon.com.pl)                               | Site theme                | Mastodon Bird UI | 100+           | No          |
-| [mastodon.sg](https://mastodon.sg)                                       | Custom CSS                | Mastodon Bird UI | 100+           | Yes          |
-| [FaithTree.social](https://faithtree.social)                             | Site theme                | Mastodon Bird UI | 19+            | Yes          |
+| [mastodon.sg](https://mastodon.sg)                                       | Custom CSS                | Mastodon Bird UI | 100+           | Yes         |
+| [FaithTree.social](https://faithtree.social)                             | Site theme                | Mastodon Bird UI | 19+            | Yes         |
+| [mustard.blog](https://mustard.blog)                                     | Site theme                | Mastodon Bird UI | 2000+          | Yes         |
+| [c.im](https://c.im)                                                     | Site theme                | Mastodon Bird UI | 2000+          | No          |
+| [datasci.social](https://datasci.social)                                 | Custom CSS                | Mastodon Bird UI | 80+            | Yes         |
+| [billys.mom](https://billys.mom)                                         | Custom CSS                | N/A              | 10+            | Yes         |
 
 ## Installation for Mastodon instance admins
 
-1. Copy the contents of `dist/mastodon-bird-ui.css` and paste it to the **Custom CSS** in the Appearance settings in your instance (https://_yourinstance_/admin/settings/appearance). This single file covers both single-column and multiple-columns (advanced web interface) layouts.
+1. Copy the contents of `dist/mastodon-bird-ui.css` and paste it to the **Custom CSS** in the Appearance settings in your instance (https://_yourinstance_/admin/settings/appearance). This single file covers both single-column and multiple-columns (advanced web interface) layouts. It is a dark theme; if you want Bird UI to follow each user's light or dark choice in the Appearance settings, use `dist/mastodon-bird-ui-auto.css` instead.
+
+   Other prebuilt variants live in `dist/` for Custom CSS users: `mastodon-bird-ui-auto.css` (follows each user's light/dark color scheme from the Appearance settings), `mastodon-bird-ui-stars.css` (a yellow Twitter-style **star** favourite instead of the heart), `mastodon-bird-ui-light.css` (always light), `mastodon-bird-ui-accessible.css` and `mastodon-bird-ui-accessible-plus.css`. Use whichever one you prefer. Rebuild a variant with `npx parcel build src/<entry>.scss --dist-dir dist` (for example `src/mastodon-bird-ui-stars.scss`).
 
 ![Screen-Shot-2023-03-31-13-25-52](https://user-images.githubusercontent.com/1534150/229111630-c8975708-134b-4887-b259-a87857193387.png)
 
@@ -321,11 +327,11 @@ There is support for threads available for the nightly version since ([see PR #2
 There are two micro-interaction animations in this UI, both are inspired by the Twitter's original UI animation. The star is originally a work of
 a Twitter designer [Brian Waddington](https://dribbble.com/shots/1884504-Twitter-Fav). The heart is by Twitter design team. Both animations have been completely re-created by me, frame by frame. The star animation itself contains 100 hand made frames.
 
-| Twitter likes | Twitter fave star (2015) | Boost animation |
-| ------------- | ------------- |------------ |
-| <img width="70%" src="https://user-images.githubusercontent.com/1534150/230135110-6391e061-10c9-4819-af8b-7144b31dac93.gif" alt="heart" /> | <img src="https://user-images.githubusercontent.com/1534150/230135096-4d1ac9b2-290b-41da-a136-985e908868fa.gif" alt="star"> | <img src="https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/ef02d2b8-14bc-4dbc-9b48-112c723c71cb" alt="boost"> |
+<img width="720" height="465" alt="gif-20260613-221105" src="https://github.com/user-attachments/assets/e6056177-6277-4952-ae56-0d7a44d2ba32" />
 
-If you like the heart, just remove everything between `Star animation micro-interactions start (depends on the heart icon above)` and `Star animation micro-interactions end`.
+Bird UI uses the **heart** by default. The **star** variant lives in `src/micro-interactions/_star.scss`; forks can expose a setting to switch to it, and Custom CSS users can swap it in.
+
+**Native favourite animations:** if your Mastodon already ships its own favourite animation as a real SVG component, like the [mementomori.social fork (PR #10)](https://github.com/mementomori-social/mastodon/pull/10) which renders a native star/heart burst (heart by default, star as an opt-in setting), the install script detects it and Bird UI steps aside for the favourite button so the native animation shows. Bird UI keeps styling the navigation and the sidebar/notification favourite icons, so nothing else changes and no configuration is needed.
 
 ## FAQ
 
@@ -375,11 +381,7 @@ If you like, you can always suggest something or create a pull request. You are 
 
 ### How to get to settings or faves on mobile?
 
-You can swipe the bottom bar. I know this is not the most obvious feature.
-
-![ezgif com-video-to-gif](https://github.com/ronilaukkarinen/mastodon-bird-ui/assets/1534150/18c832c0-2e3b-4bc2-8323-636cd08b107d)
-
-See issues [Many users don't recognize that the bottom menu is scrollable #26](https://github.com/ronilaukkarinen/mastodon-bird-ui/issues/26) and [Swiping bottom bar triggers multi-tasking on some phones #33](https://github.com/ronilaukkarinen/mastodon-bird-ui/issues/33).
+Use the navigation menu (the bottom navigation / hamburger), where Favourites, Bookmarks, Lists and Settings live. Older Bird UI versions relied on swiping the bottom bar; that no longer applies since Mastodon rebuilt its mobile navigation.
 
 ### Automatic dark/light mode possible?
 
