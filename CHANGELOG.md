@@ -1,5 +1,9 @@
 ### [Unreleased]
 
+* Fix the column-link hover pill being clipped on its inline-start edge on large screens by restoring overflow visible on the navigation pane, where the scroll fix was never needed
+* Fix the compact navigation font size (17px) on screens below 1080px height being overridden by the 18px desktop rule
+* Keep the mobile navigation bar above the slideout pane so the hamburger menu is no longer covered
+* Pad the mobile navigation links so their labels are not tight against the edge
 * Make the left navigation scroll so items below Bookmarks (Settings, More) stay reachable at high browser zoom, including extreme zoom on low-resolution screens with the accessible themes
 * Preserve other installed themes (like Tangerine) when installing Bird UI instead of rebuilding themes.yml from scratch
 * Fix the reply post indicator sticking to the left edge in non-thread replies (https://github.com/mastodon/mastodon/pull/39554)
