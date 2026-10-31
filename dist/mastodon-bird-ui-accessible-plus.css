@@ -1,4 +1,4 @@
-/* Mastodon Bird UI v4.0.1rc1 - https://github.com/ronilaukkarinen/mastodon-bird-ui */
+/* Mastodon Bird UI v4.8.0-alpha.3-2026-10-11 - https://github.com/rollecode/mastodon-bird-ui */
 :root {
   --color-text-primary: #fff;
   --color-text-secondary: #717c9b;
@@ -1173,7 +1173,7 @@ body.layout-single-column, body.layout-multiple-columns {
   object-fit: cover;
 }
 
-.layout-single-column .detailed-status .status.status--is-quote .media-gallery, .layout-single-column .status .audio-player, .layout-single-column .status .media-gallery, .layout-single-column .status .video-player, .layout-single-column .audio-player, .layout-single-column .media-gallery, .layout-single-column .media-gallery__gifv, .layout-single-column .media-gallery__preview, .layout-single-column .video-player, .layout-single-column .status__quote .status__quote-author-button, .layout-multiple-columns .detailed-status .status.status--is-quote .media-gallery, .layout-multiple-columns .status .audio-player, .layout-multiple-columns .status .media-gallery, .layout-multiple-columns .status .video-player, .layout-multiple-columns .audio-player, .layout-multiple-columns .media-gallery, .layout-multiple-columns .media-gallery__gifv, .layout-multiple-columns .media-gallery__preview, .layout-multiple-columns .video-player, .layout-multiple-columns .status__quote .status__quote-author-button {
+.layout-single-column .detailed-status .status.status--is-quote .audio-player, .layout-single-column .detailed-status .status.status--is-quote .media-gallery, .layout-single-column .detailed-status .status.status--is-quote .video-player, .layout-single-column .status .audio-player, .layout-single-column .status .media-gallery, .layout-single-column .status .video-player, .layout-single-column .audio-player, .layout-single-column .media-gallery, .layout-single-column .media-gallery__gifv, .layout-single-column .media-gallery__preview, .layout-single-column .video-player, .layout-single-column .status__quote .status__quote-author-button, .layout-multiple-columns .detailed-status .status.status--is-quote .audio-player, .layout-multiple-columns .detailed-status .status.status--is-quote .media-gallery, .layout-multiple-columns .detailed-status .status.status--is-quote .video-player, .layout-multiple-columns .status .audio-player, .layout-multiple-columns .status .media-gallery, .layout-multiple-columns .status .video-player, .layout-multiple-columns .audio-player, .layout-multiple-columns .media-gallery, .layout-multiple-columns .media-gallery__gifv, .layout-multiple-columns .media-gallery__preview, .layout-multiple-columns .video-player, .layout-multiple-columns .status__quote .status__quote-author-button {
   margin-left: calc(var(--size-avatar) + var(--gap-default));
 }
 
@@ -1213,6 +1213,20 @@ body.layout-single-column, body.layout-multiple-columns {
 .layout-single-column .media-gallery.media-gallery__item--tall, .layout-single-column .media-gallery.media-gallery--layout-1, .layout-single-column .media-gallery.media-gallery--layout-2, .layout-single-column .media-gallery.media-gallery--layout-3, .layout-single-column .media-gallery.media-gallery--layout-4, .layout-single-column .media-gallery__preview, .layout-single-column .audio-player, .layout-single-column .video-player, .layout-multiple-columns .media-gallery.media-gallery__item--tall, .layout-multiple-columns .media-gallery.media-gallery--layout-1, .layout-multiple-columns .media-gallery.media-gallery--layout-2, .layout-multiple-columns .media-gallery.media-gallery--layout-3, .layout-multiple-columns .media-gallery.media-gallery--layout-4, .layout-multiple-columns .media-gallery__preview, .layout-multiple-columns .audio-player, .layout-multiple-columns .video-player {
   max-height: 430px;
   width: unset !important;
+}
+
+.layout-single-column .media-gallery.media-gallery--layout-1:has(.media-gallery__preview--hidden), .layout-multiple-columns .media-gallery.media-gallery--layout-1:has(.media-gallery__preview--hidden) {
+  height: auto;
+  aspect-ratio: auto !important;
+  width: fit-content !important;
+}
+
+.layout-single-column .media-gallery.media-gallery--layout-1:has(.media-gallery__preview--hidden) .media-gallery__item-thumbnail img, .layout-multiple-columns .media-gallery.media-gallery--layout-1:has(.media-gallery__preview--hidden) .media-gallery__item-thumbnail img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 428px;
+  display: block;
 }
 
 .layout-single-column canvas[class="media-gallery__preview"], .layout-multiple-columns canvas[class="media-gallery__preview"], .layout-single-column .media-gallery:has(.spoiler-button) .media-gallery__preview, .layout-multiple-columns .media-gallery:has(.spoiler-button) .media-gallery__preview {
